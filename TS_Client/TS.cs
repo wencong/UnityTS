@@ -148,7 +148,7 @@ TS.EndSample();
 
         if (stopwatchMaps.ContainsKey(samplerName))
         {
-            Log.Warning(string.Format("Sample: {0} is already exist!", samplerName));
+			UnityEngine.Debug.LogWarning(string.Format("Sample: {0} is already exist!", samplerName));
             return;
         }
         Stopwatch stopwatch = Stopwatch.StartNew();
@@ -177,14 +177,14 @@ TS.EndSample();
 
         if (!stopwatchMaps.ContainsKey(sampleName))
         {
-            Log.Error("Sample {0} is not exist!", sampleName);
+			UnityEngine.Debug.LogErrorFormat("Sample {0} is not exist!", sampleName);
             return;
         }
 
         SStopWatch sstopwatch = stopwatchMaps[sampleName];
         if (!sstopwatch.stopwatch.IsRunning)
         {
-            Log.Error("Sampler {0} is not running, please call BeginSample first", sampleName);
+			UnityEngine.Debug.LogErrorFormat("Sampler {0} is not running, please call BeginSample first", sampleName);
             return;
         }
 
@@ -221,7 +221,7 @@ TS.EndSample();
         //stopwatchMapsCrs.contaik
         if (stopwatchMapsCrs.ContainsKey(sampleName))
         {
-            Log.Warning(string.Format("Sample: {0} is already exist!", sampleName));
+			UnityEngine.Debug.LogWarningFormat(string.Format("Sample: {0} is already exist!", sampleName));
             return;
         }
         Stopwatch stopwatch = Stopwatch.StartNew();
@@ -243,14 +243,14 @@ TS.EndSample();
 
         if (!stopwatchMapsCrs.ContainsKey(sampleName))
         {
-            Log.Error("Sample {0} is not exist in CrossFrameData", sampleName);
+			UnityEngine.Debug.LogErrorFormat("Sample {0} is not exist in CrossFrameData", sampleName);
             return;
         }
 
         SampleDataCrossFrame data = stopwatchMapsCrs[sampleName];
         if (!data.stopwatch.IsRunning)
         {
-            Log.Error("Sampler {0} is not running, please call BeginSampleCrossFrame first", sampleName);
+			UnityEngine.Debug.LogErrorFormat("Sampler {0} is not running, please call BeginSampleCrossFrame first", sampleName);
             return;
         }
 
